@@ -1,0 +1,37 @@
+GIT
+  remote: git://github.com/lian/bitcoin-ruby.git
+  revision: e9e43b4c2c8179682b33ad9f33091d06f82c3a2a
+  ref: e9e43b4c2c8179682b33ad9f33091d06f82c3a2a
+  specs:
+    bitcoin-ruby (0.0.2)
+
+GIT
+  remote: git://github.com/lian/ffi-cairo.git
+  revision: 14b7ad6189fa5bd541d5fee33aba1d7e8c0190dd
+  ref: 14b7ad6189fa5bd541d5fee33aba1d7e8c0190dd
+  specs:
+    ffi-cairo (0.0.1)
+      ffi
+
+GIT
+  remote: git://github.com/lian/shamir-secret-sharing.git
+  revision: 648562b2515f170047ddddde2c79e8b3426be523
+  ref: 648562b2515f170047ddddde2c79e8b3426be523
+  specs:
+    shamir-secret-sharing (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ffi (1.9.3)
+    rqrcode (0.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bitcoin-ruby!
+  ffi
+  ffi-cairo!
+  rqrcode
+  shamir-secret-sharing!
