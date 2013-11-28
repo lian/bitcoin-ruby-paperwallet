@@ -42,11 +42,13 @@ end
 
 network_type = :bitcoin
 num_keys = 4
+wallet_name = "test-wallet"
 
 keys = Bitcoin::PaperWallet.generate(num_keys, network_type)
-Bitcoin::PaperWallet::Draw.draw_keys(keys, network_type)
+#Bitcoin::PaperWallet::Draw.draw_addresses(keys.map{|i| i[0] }, wallet_name, network_type)
+Bitcoin::PaperWallet::Draw.draw_keys(keys, wallet_name, network_type)
 
 available, needed = 3, 2
 #shares = Bitcoin::ColdStorage.generate_parts(num_keys, network_type, 3, 2)
 shares = Bitcoin::PaperWallet.generate_parts(keys, network_type, available, needed)
-Bitcoin::PaperWallet::Draw.draw_shares(shares, network_type)
+Bitcoin::PaperWallet::Draw.draw_shares(shares, available, needed, wallet_name, network_type)
