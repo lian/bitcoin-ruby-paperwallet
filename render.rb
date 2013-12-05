@@ -15,7 +15,7 @@ module Bitcoin
         width, height = 2480, 3508 # DIN A4 at 300 dpi
         w, h = width/2, height/2 # half width, height
 
-        filename_base = "qr-addr"
+        filename_base = "qr-#{Bitcoin.network_name}-addr"
         count = 0
         files = []
 
@@ -82,6 +82,7 @@ module Bitcoin
             c.font = "Mono"; c.font_size = 25; c.set_source_rgb(0, 0, 0)
 
             side_text = [
+              "network: #{Bitcoin.network_name}",
               "address: #{count += 1}",
               "balance:",
             ]
@@ -98,6 +99,7 @@ module Bitcoin
 
 
             side_text = [
+              "network: #{Bitcoin.network_name}",
               "address: #{count += 1}",
               "balance:",
             ]
@@ -138,7 +140,7 @@ module Bitcoin
         width, height = 2480, 3508 # DIN A4 at 300 dpi
         w, h = width/2, height/2 # half width, height
 
-        filename_base = "qr-parts"
+        filename_base = "qr-#{Bitcoin.network_name}-parts"
         files = []
         addr_num = 0
         part_cur = 0
@@ -221,6 +223,7 @@ module Bitcoin
               c.font = "Mono"; c.font_size = 25; c.set_source_rgb(0, 0, 0)
 
               side_text = [
+                "network: #{Bitcoin.network_name}",
                 "address: #{addr_index}",
                 "available: #{available}",
                 "needed: #{needed}",
@@ -265,7 +268,7 @@ module Bitcoin
         width, height = 2480, 3508 # DIN A4 at 300 dpi
         w, h = width/2, height/2
 
-        filename_base, files = "qr-keys", []
+        filename_base, files = "qr-#{Bitcoin.network_name}-keys", []
         count = 0
 
         files += draw_addresses(keys.map{|i| i[0] }, wallet_name, type)
@@ -338,6 +341,7 @@ module Bitcoin
             c.font = "Mono"; c.font_size = 25; c.set_source_rgb(0, 0, 0)
 
             side_text = [
+              "network: #{Bitcoin.network_name}",
               "address: #{addr_index}",
             ]
             side_text.unshift("wallet: #{wallet_name}") if wallet_name
@@ -353,6 +357,7 @@ module Bitcoin
 
 
             side_text = [
+              "network: #{Bitcoin.network_name}",
               "key: #{addr_index}",
             ]
             side_text.unshift("wallet: #{wallet_name}") if wallet_name
